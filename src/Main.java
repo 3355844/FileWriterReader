@@ -12,34 +12,9 @@ public class Main {
         String fileText = "fileText, ";
         File file = new File(fileName);
 
-// FileWriter Class Example
-
-        FileWriter fileWriter = null;
-
-        try {
-            fileWriter = new FileWriter(file, true);
-
-            fileWriter.write(fileText);
-            fileWriter.write(new Date().toString());
-
-            fileWriter.flush();
-            fileWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+//        FileWriter Class Example
+        FileManager.writeFileWithFileWriter(fileText, file);
 //        FileReader class Example
-
-        char[] charBuffer = new char[250];
-        try {
-            FileReader fileReader  = new FileReader(file);
-            fileReader.read(charBuffer);
-            for (char c : charBuffer) {
-                System.out.print(c);
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        FileManager.readFileWithFileReader(file);
     }
 }
